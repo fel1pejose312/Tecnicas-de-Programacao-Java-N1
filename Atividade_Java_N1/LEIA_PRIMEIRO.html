@@ -1,87 +1,640 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Atividade Java N1</title>
-<style>
-:root{color-scheme:light;font-family:Segoe UI,Arial,sans-serif;color:#243348;background:#f1f5f9}
-*{box-sizing:border-box}body{margin:0}main{max-width:960px;margin:auto;padding:48px 24px}
-header{background:#183b56;color:white;padding:32px;border-radius:16px;margin-bottom:24px}
-header p{margin:0;font-size:14px;letter-spacing:.08em;color:#d1e5f5}h1{font-size:36px;margin:10px 0;line-height:1.2}
-header span{color:#d1e5f5}.intro{font-size:18px;line-height:1.7;padding:0 8px;margin:24px 0}
-section{background:white;border:1px solid #dbe4ed;border-radius:12px;padding:24px 28px;margin:18px 0}
-h2{font-size:19px;color:#16547b;margin:0 0 16px;padding-bottom:12px;border-bottom:1px solid #e4ebf1}
-.texto{white-space:pre-line;line-height:1.8;margin:0;font-size:16px}
-@media(max-width:600px){main{padding:20px 14px}header,section{padding:22px}h1{font-size:28px}.texto{font-size:15px}}
-@media print{body{background:white}main{padding:0}header{background:white;color:#183b56;padding:0}header p,header span{color:#243348}section{break-inside:avoid;border:0;border-bottom:1px solid #ddd;border-radius:0;padding:16px 0}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Atividade Java N1</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #f3f5f7;
+      color: #263444;
+      font: 16px/1.65 "Segoe UI", Arial, sans-serif;
+    }
+
+    main {
+      max-width: 880px;
+      margin: auto;
+      padding: 40px 24px;
+    }
+
+    header {
+      padding: 0 0 24px;
+      border-bottom: 3px solid #245671;
+      margin-bottom: 28px;
+    }
+
+    header p {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      color: #526777;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 30px;
+      line-height: 1.2;
+      margin: 10px 0;
+    }
+
+    header span {
+      color: #607080;
+      font-size: 15px;
+    }
+
+    .intro {
+      margin: 0 0 24px;
+    }
+
+    section {
+      background: #fff;
+      border: 1px solid #dce3e9;
+      border-radius: 8px;
+      padding: 26px;
+      margin: 0 0 20px;
+    }
+
+    h2 {
+      font-size: 21px;
+      line-height: 1.35;
+      color: #204f69;
+      margin: 0 0 18px;
+    }
+
+    h3 {
+      font-size: 16px;
+      margin: 20px 0 8px;
+    }
+
+    p {
+      margin: 0 0 12px;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    .arquivo {
+      color: #607080;
+      font-size: 14px;
+      margin-bottom: 18px;
+      overflow-wrap: anywhere;
+    }
+
+    ul,
+    ol {
+      padding-left: 22px;
+      margin: 8px 0 16px;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    .conceitos {
+      font-size: 14px;
+      color: #526777;
+      border-top: 1px solid #e5eaf0;
+      padding-top: 12px;
+      margin-top: 18px;
+    }
+
+    code {
+      font: 14px Consolas, monospace;
+      background: #eef2f5;
+      padding: 2px 5px;
+      border-radius: 3px;
+    }
+
+    pre {
+      background: #eef2f5;
+      padding: 14px 16px;
+      border-radius: 5px;
+      overflow: auto;
+      line-height: 1.6;
+    }
+
+    pre code {
+      padding: 0;
+      background: none;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 12px 0;
+      font-size: 15px;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 9px 10px;
+      border-bottom: 1px solid #e2e8ed;
+    }
+
+    th {
+      background: #f4f7f9;
+      font-weight: 600;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding: 24px 14px;
+      }
+
+      section {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+
+      h2 {
+        font-size: 19px;
+      }
+
+      th,
+      td {
+        padding: 8px;
+        font-size: 14px;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+        font-size: 11pt;
+      }
+
+      main {
+        max-width: none;
+        padding: 0;
+      }
+
+      section {
+        border: 0;
+        border-bottom: 1px solid #ddd;
+        padding: 14px 0;
+        break-inside: avoid;
+      }
+
+      header {
+        margin-bottom: 18px;
+      }
+
+      h2 {
+        font-size: 16pt;
+      }
+
+      pre {
+        white-space: pre-wrap;
+      }
+    }
+  </style>
 </head>
-<body><main>
-<header><p>TÉCNICAS DE PROGRAMAÇÃO</p><h1>Atividade Java N1</h1><span>Cinco exercícios de Java • Explicação para o professor</span></header><p class="intro">Este trabalho apresenta cinco programas de console. Cada exercicio fica em uma pasta separada e demonstra os conceitos pedidos no enunciado. Os exercicios 1 e 2 recebem dados pelo teclado. Nos exercicios 3, 4 e 5, os objetos e os valores de exemplo sao definidos no programa principal.</p>
-<section><h2>EXERCICIO 1 - CAIXA ELETRONICO</h2><p class="texto">Arquivo principal: exercicio1/CaixaEletronico.java
-Recebe um valor inteiro e mostra as notas de 200, 100, 50, 20, 10, 5 e 2 reais
-necessarias para completar o saque. Um vetor guarda as notas e um laco for
-percorre os valores da maior nota para a menor.
-A divisao inteira calcula a quantidade de notas. O resto da divisao ajuda
-a evitar sobras de 1 ou 3 reais, que nao podem ser formadas com essas notas.
-Exemplo: para 387 reais, entrega uma nota de cada valor.
-Para 6 reais, entrega tres notas de 2. Para 1 ou 3, informa a impossibilidade.
-Conceitos: variaveis, vetor, repeticao, condicionais e operacoes aritmeticas.</p></section>
-<section><h2>EXERCICIO 2 - SISTEMA DE VENDAS</h2><p class="texto">Arquivo principal: exercicio2/SistemaVendas.java
-Recebe a quantidade de vendas e o valor de cada uma. Calcula o total,
-a maior venda, a menor venda, a media e a quantidade de vendas acima de
-500 reais. Por ultimo, calcula a comissao sobre o total vendido:
-ate 1000 reais: 3%; acima de 1000 ate 5000 reais: 5%; acima de 5000 reais: 8%.
-A primeira venda serve de referencia para encontrar a maior e a menor.
-Uma venda de exatamente 500 reais nao entra no contador de vendas acima de 500.
-Na entrada, use virgula nos centavos, como 125,50, sem separador de milhar.
-Exemplo: vendas de 100, 600, 500, 1000 e 300 totalizam 2500 reais;
-a media e 500 reais, duas vendas superam 500 e a comissao e 125 reais.
-Conceitos: entrada de dados, repeticao, acumulador, contador e condicionais.</p></section>
-<section><h2>EXERCICIO 3 - SISTEMA DE FUNCIONARIOS</h2><p class="texto">Arquivos: exercicio3/Funcionario.java e Principal.java
-A classe Funcionario guarda nome, cargo e salario em atributos privados.
-O construtor recebe os dados iniciais. aumentarSalario recebe o percentual
-de aumento, calcularSalarioAnual retorna o salario mensal multiplicado por
-12 e exibirDados apresenta as informacoes.
-O programa principal cria cinco funcionarios e aplica aumentos diferentes:
-Ana: 10%, salario final 3300; Bruno: 5%, 2100; Carla: 15%, 4600;
-Diego: 8%, 2700; Elisa: 12%, 5600 reais.
-Conceitos: classe, objetos, construtor, encapsulamento e metodos.</p></section>
-<section><h2>EXERCICIO 4 - FUNCIONARIOS COM HERANCA</h2><p class="texto">Arquivos: exercicio4/Funcionario.java, Gerente.java, Vendedor.java e Principal.java
-Funcionario guarda nome e salario-base. Gerente e Vendedor herdam dessa classe.
-Cada classe define calcularSalario: o funcionario comum recebe o salario-base,
-o gerente recebe mais 20% e o vendedor recebe mais 10% do total de suas vendas.
-O programa guarda os tres tipos em um vetor de Funcionario e chama o mesmo
-metodo para todos. Cada objeto executa a versao correspondente ao seu tipo.
-Resultados: Ana recebe 2500, Bruno recebe 6000 e Carla recebe 3200 reais.
-Conceitos: heranca, construtores, encapsulamento, sobrescrita e polimorfismo.</p></section>
-<section><h2>EXERCICIO 5 - SISTEMA DE CONTAS BANCARIAS</h2><p class="texto">Arquivos: exercicio5/Conta.java, ContaCorrente.java, ContaPoupanca.java e Principal.java
-Conta guarda numero, titular e saldo em atributos privados. depositar soma
-o valor ao saldo e sacar subtrai. ContaCorrente e ContaPoupanca herdam de Conta
-e sobrescrevem calcularSaldo.
-A conta corrente retorna o saldo menos a taxa de manutencao.
-A poupanca retorna o saldo mais o rendimento percentual. O valor 2 significa 2%.
-O programa cria duas contas correntes e duas poupancas, faz depositos e saques
-e mostra os dados e os saldos calculados: 1280, 2070, 1224 e 3030 reais.
-calcularSaldo retorna o resultado sem alterar o saldo guardado. Assim, uma
-nova consulta nao desconta outra taxa nem acrescenta outro rendimento.
-Conceitos: classes, objetos, encapsulamento, heranca e sobrescrita de metodos.</p></section>
-<section><h2>OBSERVACOES SOBRE O ENUNCIADO</h2><p class="texto">O PDF inicia a segunda faixa de comissao em 1001 reais, mas nao especifica
-valores entre 1000,00 e 1001,00. Foi adotado 5% para qualquer total acima de
-1000,00 ate 5000,00, incluindo 1000,50.
-Na poupanca, o texto pede somar o rendimento ao saldo, mas tambem menciona
-&quot;saldo * porcentagem&quot;. Foi usada a regra de somar o rendimento:
-saldo + saldo * percentual / 100. Por exemplo, 1200 com 2% resulta em 1224.
-O trabalho concentra-se no fluxo principal, conforme o PDF. Nao inclui
-cadastro complexo, interface grafica ou tratamento geral de entradas invalidas.</p></section>
-<section><h2>COMO COMPILAR E EXECUTAR</h2><p class="texto">E necessario um JDK, que possui os comandos java e javac.
-Com o JDK instalado e os comandos java e javac disponiveis no terminal,
-entre na pasta de um exercicio, por exemplo:
-  cd .\Atividade_Java_N1\exercicio1
-  javac -encoding UTF-8 *.java
-  java CaixaEletronico
-No exercicio2, use java SistemaVendas.
-Nos exercicios3, 4 e 5, use java Principal.
-Compile cada pasta separadamente, pois alguns exercicios repetem nomes de classes.</p></section>
-</main></body></html>
+
+<body>
+  <main>
+    <header>
+      <p>TÉCNICAS DE PROGRAMAÇÃO</p>
+      <h1>Atividade Java N1</h1>
+      <span>Resumo dos cinco exercícios</span>
+    </header>
+
+    <p class="intro">
+      Cada exercício fica em uma pasta separada. Os exercícios 1 e 2
+      recebem dados pelo teclado. Nos exercícios 3, 4 e 5, os dados
+      de exemplo já estão definidos no código.
+    </p>
+
+    <section>
+      <h2>1. Caixa eletrônico</h2>
+
+      <p class="arquivo">
+        Pasta: <code>exercicio1</code> ·
+        Arquivo: <code>CaixaEletronico.java</code>
+      </p>
+
+      <p>
+        Recebe um valor inteiro de saque e informa quantas notas
+        de R$ 200, 100, 50, 20, 10, 5 e 2 são necessárias.
+      </p>
+
+      <h3>Como funciona</h3>
+
+      <p>
+        Um vetor guarda as notas. O laço <code>for</code> percorre
+        os valores da maior nota para a menor. A divisão inteira
+        calcula a quantidade de notas, e o resto da divisão permite
+        ajustar a distribuição para evitar sobras de R$ 1 ou R$ 3.
+      </p>
+
+      <h3>Exemplos</h3>
+
+      <ul>
+        <li><strong>R$ 387:</strong> uma nota de cada valor.</li>
+        <li><strong>R$ 6:</strong> três notas de R$ 2.</li>
+        <li>
+          <strong>R$ 1 ou R$ 3:</strong>
+          informa que o saque não é possível.
+        </li>
+      </ul>
+
+      <p class="conceitos">
+        <strong>Conceitos:</strong> variáveis, vetor, repetição,
+        condicionais e operações aritméticas.
+      </p>
+    </section>
+
+    <section>
+      <h2>2. Sistema de vendas</h2>
+
+      <p class="arquivo">
+        Pasta: <code>exercicio2</code> ·
+        Arquivo: <code>SistemaVendas.java</code>
+      </p>
+
+      <p>
+        Recebe a quantidade de vendas e o valor de cada uma.
+        Apresenta total, maior venda, menor venda, média,
+        quantidade de vendas acima de R$ 500 e comissão.
+      </p>
+
+      <h3>Como funciona</h3>
+
+      <p>
+        O programa soma os valores durante a repetição.
+        A primeira venda serve como referência para encontrar
+        a maior e a menor. O contador aumenta somente quando
+        uma venda ultrapassa R$ 500.
+      </p>
+
+      <h3>Comissão sobre o total vendido</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Total</th>
+            <th>Comissão</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Até R$ 1.000</td>
+            <td>3%</td>
+          </tr>
+          <tr>
+            <td>Acima de R$ 1.000 até R$ 5.000</td>
+            <td>5%</td>
+          </tr>
+          <tr>
+            <td>Acima de R$ 5.000</td>
+            <td>8%</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Exemplo</h3>
+
+      <p>Vendas de R$ 100, 600, 500, 1.000 e 300 resultam em:</p>
+
+      <ul>
+        <li>
+          <strong>Total:</strong> R$ 2.500 ·
+          <strong>Média:</strong> R$ 500.
+        </li>
+        <li>
+          <strong>Maior:</strong> R$ 1.000 ·
+          <strong>Menor:</strong> R$ 100.
+        </li>
+        <li><strong>Acima de R$ 500:</strong> 2 vendas.</li>
+        <li><strong>Comissão:</strong> R$ 125.</li>
+      </ul>
+
+      <p class="conceitos">
+        <strong>Conceitos:</strong> entrada de dados, repetição,
+        acumulador, contador e condicionais.
+      </p>
+    </section>
+
+    <section>
+      <h2>3. Sistema de funcionários</h2>
+
+      <p class="arquivo">
+        Pasta: <code>exercicio3</code> ·
+        Arquivos: <code>Funcionario.java</code> e
+        <code>Principal.java</code>
+      </p>
+
+      <p>
+        A classe <code>Funcionario</code> guarda nome, cargo e
+        salário em atributos privados. O construtor recebe
+        os dados iniciais de cada funcionário.
+      </p>
+
+      <h3>Métodos</h3>
+
+      <ul>
+        <li>
+          <code>aumentarSalario()</code>:
+          recebe um percentual e atualiza o salário.
+        </li>
+        <li>
+          <code>calcularSalarioAnual()</code>:
+          retorna o salário mensal multiplicado por 12.
+        </li>
+        <li>
+          <code>exibirDados()</code>:
+          mostra as informações do funcionário.
+        </li>
+      </ul>
+
+      <h3>Resultados dos cinco funcionários</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Funcionário</th>
+            <th>Aumento</th>
+            <th>Salário final</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ana</td>
+            <td>10%</td>
+            <td>R$ 3.300</td>
+          </tr>
+          <tr>
+            <td>Bruno</td>
+            <td>5%</td>
+            <td>R$ 2.100</td>
+          </tr>
+          <tr>
+            <td>Carla</td>
+            <td>15%</td>
+            <td>R$ 4.600</td>
+          </tr>
+          <tr>
+            <td>Diego</td>
+            <td>8%</td>
+            <td>R$ 2.700</td>
+          </tr>
+          <tr>
+            <td>Elisa</td>
+            <td>12%</td>
+            <td>R$ 5.600</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="conceitos">
+        <strong>Conceitos:</strong> classes, objetos, construtor,
+        encapsulamento e métodos.
+      </p>
+    </section>
+
+    <section>
+      <h2>4. Funcionários com herança</h2>
+
+      <p class="arquivo">
+        Pasta: <code>exercicio4</code> ·
+        Arquivos: <code>Funcionario.java</code>,
+        <code>Gerente.java</code>, <code>Vendedor.java</code>
+        e <code>Principal.java</code>
+      </p>
+
+      <p>
+        <code>Funcionario</code> guarda nome e salário-base.
+        <code>Gerente</code> e <code>Vendedor</code> herdam dessa
+        classe e possuem suas próprias regras de cálculo.
+      </p>
+
+      <h3>Cálculo do salário</h3>
+
+      <ul>
+        <li>
+          <strong>Funcionário:</strong> recebe o salário-base.
+        </li>
+        <li>
+          <strong>Gerente:</strong> recebe o salário-base mais 20%.
+        </li>
+        <li>
+          <strong>Vendedor:</strong> recebe o salário-base
+          mais 10% do total de suas vendas.
+        </li>
+      </ul>
+
+      <p>
+        O programa guarda os três tipos em um vetor de
+        <code>Funcionario</code> e chama
+        <code>calcularSalario()</code> para todos.
+        Cada objeto executa a versão correspondente ao seu tipo.
+      </p>
+
+      <h3>Resultados</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Funcionário</th>
+            <th>Tipo</th>
+            <th>Salário final</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ana</td>
+            <td>Funcionário</td>
+            <td>R$ 2.500</td>
+          </tr>
+          <tr>
+            <td>Bruno</td>
+            <td>Gerente</td>
+            <td>R$ 6.000</td>
+          </tr>
+          <tr>
+            <td>Carla</td>
+            <td>Vendedor</td>
+            <td>R$ 3.200</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="conceitos">
+        <strong>Conceitos:</strong> herança, construtores,
+        encapsulamento, sobrescrita e polimorfismo.
+      </p>
+    </section>
+
+    <section>
+      <h2>5. Sistema de contas bancárias</h2>
+
+      <p class="arquivo">
+        Pasta: <code>exercicio5</code> ·
+        Arquivos: <code>Conta.java</code>,
+        <code>ContaCorrente.java</code>,
+        <code>ContaPoupanca.java</code> e
+        <code>Principal.java</code>
+      </p>
+
+      <p>
+        <code>Conta</code> guarda número, titular e saldo em
+        atributos privados. <code>ContaCorrente</code> e
+        <code>ContaPoupanca</code> herdam dessa classe.
+      </p>
+
+      <h3>Operações</h3>
+
+      <ul>
+        <li>
+          <code>depositar()</code>: soma um valor ao saldo.
+        </li>
+        <li>
+          <code>sacar()</code>: subtrai um valor do saldo.
+        </li>
+        <li>
+          <code>calcularSaldo()</code>: na conta corrente,
+          desconta a taxa no resultado; na poupança,
+          acrescenta o rendimento percentual.
+        </li>
+      </ul>
+
+      <p>
+        O cálculo retorna o resultado sem modificar o saldo
+        armazenado. Depósitos e saques alteram esse saldo.
+      </p>
+
+      <h3>Resultados após as operações</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Conta</th>
+            <th>Saldo calculado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Corrente 1</td>
+            <td>R$ 1.280</td>
+          </tr>
+          <tr>
+            <td>Corrente 2</td>
+            <td>R$ 2.070</td>
+          </tr>
+          <tr>
+            <td>Poupança 1</td>
+            <td>R$ 1.224</td>
+          </tr>
+          <tr>
+            <td>Poupança 2</td>
+            <td>R$ 3.030</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="conceitos">
+        <strong>Conceitos:</strong> classes, objetos,
+        encapsulamento, herança e sobrescrita de métodos.
+      </p>
+    </section>
+
+    <section>
+      <h2>Como executar no computador</h2>
+
+      <p>
+        É necessário ter um JDK instalado, com os comandos
+        <code>java</code> e <code>javac</code> disponíveis.
+      </p>
+
+      <h3>1. Abra a pasta do exercício</h3>
+
+      <p>
+        No terminal, entre na pasta do exercício que deseja
+        testar. Exemplo, partindo da pasta que contém
+        <code>Atividade_Java_N1</code>:
+      </p>
+
+      <pre><code>cd .\Atividade_Java_N1\exercicio1</code></pre>
+
+      <h3>2. Compile os arquivos</h3>
+
+      <p>Dentro da pasta escolhida, execute:</p>
+
+      <pre><code>javac -encoding UTF-8 *.java</code></pre>
+
+      <h3>3. Execute o programa</h3>
+
+      <p>Use o comando correspondente ao exercício:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Pasta</th>
+            <th>Comando</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>exercicio1</td>
+            <td><code>java CaixaEletronico</code></td>
+          </tr>
+          <tr>
+            <td>exercicio2</td>
+            <td><code>java SistemaVendas</code></td>
+          </tr>
+          <tr>
+            <td>exercicio3</td>
+            <td><code>java Principal</code></td>
+          </tr>
+          <tr>
+            <td>exercicio4</td>
+            <td><code>java Principal</code></td>
+          </tr>
+          <tr>
+            <td>exercicio5</td>
+            <td><code>java Principal</code></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>4. Informe os dados, quando solicitado</h3>
+
+      <ul>
+        <li>
+          <strong>Exercício 1:</strong>
+          digite um valor inteiro de saque, como <code>387</code>.
+        </li>
+        <li>
+          <strong>Exercício 2:</strong>
+          digite a quantidade de vendas e depois cada valor.
+          Use vírgula nos centavos, como <code>125,50</code>,
+          sem separador de milhar.
+        </li>
+        <li>
+          <strong>Exercícios 3, 4 e 5:</strong>
+          os resultados aparecem automaticamente.
+        </li>
+      </ul>
+
+      <p>
+        Compile cada exercício dentro da sua própria pasta,
+        pois alguns usam os mesmos nomes de classes.
+      </p>
+    </section>
+  </main>
+</body>
+</html>
