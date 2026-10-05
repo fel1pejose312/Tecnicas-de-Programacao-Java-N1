@@ -1,85 +1,165 @@
-ATIVIDADE PROCESSUAL N1 - TECNICAS DE PROGRAMACAO JAVA
+TÉCNICAS DE PROGRAMAÇÃO
 
-Este trabalho apresenta cinco programas de console. Cada exercicio fica em
-uma pasta separada e demonstra os conceitos pedidos no enunciado.
-Os exercicios 1 e 2 recebem dados pelo teclado. Nos exercicios 3, 4 e 5,
-os objetos e os valores de exemplo sao definidos no programa principal.
+ATIVIDADE JAVA N1
 
-EXERCICIO 1 - CAIXA ELETRONICO
-Arquivo principal: exercicio1/CaixaEletronico.java
-Recebe um valor inteiro e mostra as notas de 200, 100, 50, 20, 10, 5 e 2 reais
-necessarias para completar o saque. Um vetor guarda as notas e um laco for
-percorre os valores da maior nota para a menor.
-A divisao inteira calcula a quantidade de notas. O resto da divisao ajuda
-a evitar sobras de 1 ou 3 reais, que nao podem ser formadas com essas notas.
-Exemplo: para 387 reais, entrega uma nota de cada valor.
-Para 6 reais, entrega tres notas de 2. Para 1 ou 3, informa a impossibilidade.
-Conceitos: variaveis, vetor, repeticao, condicionais e operacoes aritmeticas.
+Resumo dos cinco exercícios
 
-EXERCICIO 2 - SISTEMA DE VENDAS
-Arquivo principal: exercicio2/SistemaVendas.java
-Recebe a quantidade de vendas e o valor de cada uma. Calcula o total,
-a maior venda, a menor venda, a media e a quantidade de vendas acima de
-500 reais. Por ultimo, calcula a comissao sobre o total vendido:
-ate 1000 reais: 3%; acima de 1000 ate 5000 reais: 5%; acima de 5000 reais: 8%.
-A primeira venda serve de referencia para encontrar a maior e a menor.
-Uma venda de exatamente 500 reais nao entra no contador de vendas acima de 500.
-Na entrada, use virgula nos centavos, como 125,50, sem separador de milhar.
-Exemplo: vendas de 100, 600, 500, 1000 e 300 totalizam 2500 reais;
-a media e 500 reais, duas vendas superam 500 e a comissao e 125 reais.
-Conceitos: entrada de dados, repeticao, acumulador, contador e condicionais.
+Cada exercício fica em uma pasta separada. Os exercícios 1 e 2 recebem dados pelo
+teclado. Nos exercícios 3, 4 e 5, os dados de exemplo já estão definidos no código.
 
-EXERCICIO 3 - SISTEMA DE FUNCIONARIOS
-Arquivos: exercicio3/Funcionario.java e Principal.java
-A classe Funcionario guarda nome, cargo e salario em atributos privados.
-O construtor recebe os dados iniciais. aumentarSalario recebe o percentual
-de aumento, calcularSalarioAnual retorna o salario mensal multiplicado por
-12 e exibirDados apresenta as informacoes.
-O programa principal cria cinco funcionarios e aplica aumentos diferentes:
-Ana: 10%, salario final 3300; Bruno: 5%, 2100; Carla: 15%, 4600;
-Diego: 8%, 2700; Elisa: 12%, 5600 reais.
-Conceitos: classe, objetos, construtor, encapsulamento e metodos.
+1. CAIXA ELETRÔNICO
 
-EXERCICIO 4 - FUNCIONARIOS COM HERANCA
-Arquivos: exercicio4/Funcionario.java, Gerente.java, Vendedor.java e Principal.java
-Funcionario guarda nome e salario-base. Gerente e Vendedor herdam dessa classe.
-Cada classe define calcularSalario: o funcionario comum recebe o salario-base,
-o gerente recebe mais 20% e o vendedor recebe mais 10% do total de suas vendas.
-O programa guarda os tres tipos em um vetor de Funcionario e chama o mesmo
-metodo para todos. Cada objeto executa a versao correspondente ao seu tipo.
-Resultados: Ana recebe 2500, Bruno recebe 6000 e Carla recebe 3200 reais.
-Conceitos: heranca, construtores, encapsulamento, sobrescrita e polimorfismo.
+Pasta: exercicio1 · Arquivo: CaixaEletronico.java
 
-EXERCICIO 5 - SISTEMA DE CONTAS BANCARIAS
-Arquivos: exercicio5/Conta.java, ContaCorrente.java, ContaPoupanca.java e Principal.java
-Conta guarda numero, titular e saldo em atributos privados. depositar soma
-o valor ao saldo e sacar subtrai. ContaCorrente e ContaPoupanca herdam de Conta
-e sobrescrevem calcularSaldo.
-A conta corrente retorna o saldo menos a taxa de manutencao.
-A poupanca retorna o saldo mais o rendimento percentual. O valor 2 significa 2%.
-O programa cria duas contas correntes e duas poupancas, faz depositos e saques
-e mostra os dados e os saldos calculados: 1280, 2070, 1224 e 3030 reais.
-calcularSaldo retorna o resultado sem alterar o saldo guardado. Assim, uma
-nova consulta nao desconta outra taxa nem acrescenta outro rendimento.
-Conceitos: classes, objetos, encapsulamento, heranca e sobrescrita de metodos.
+Recebe um valor inteiro de saque e informa quantas notas de R$ 200, 100, 50, 20, 10, 5 e
+2 são necessárias.
 
-OBSERVACOES SOBRE O ENUNCIADO
-O PDF inicia a segunda faixa de comissao em 1001 reais, mas nao especifica
-valores entre 1000,00 e 1001,00. Foi adotado 5% para qualquer total acima de
-1000,00 ate 5000,00, incluindo 1000,50.
-Na poupanca, o texto pede somar o rendimento ao saldo, mas tambem menciona
-"saldo * porcentagem". Foi usada a regra de somar o rendimento:
-saldo + saldo * percentual / 100. Por exemplo, 1200 com 2% resulta em 1224.
-O trabalho concentra-se no fluxo principal, conforme o PDF. Nao inclui
-cadastro complexo, interface grafica ou tratamento geral de entradas invalidas.
+Como funciona
 
-COMO COMPILAR E EXECUTAR
-E necessario um JDK, que possui os comandos java e javac.
-Com o JDK instalado e os comandos java e javac disponiveis no terminal,
-entre na pasta de um exercicio, por exemplo:
-  cd .\Atividade_Java_N1\exercicio1
-  javac -encoding UTF-8 *.java
-  java CaixaEletronico
-No exercicio2, use java SistemaVendas.
-Nos exercicios3, 4 e 5, use java Principal.
-Compile cada pasta separadamente, pois alguns exercicios repetem nomes de classes.
+Um vetor guarda as notas. O laço for percorre os valores da maior nota para a menor. A
+divisão inteira calcula a quantidade de notas, e o resto da divisão permite ajustar a
+distribuição para evitar sobras de R$ 1 ou R$ 3.
+
+Exemplos
+
+- R$ 387: uma nota de cada valor.
+- R$ 6: três notas de R$ 2.
+- R$ 1 ou R$ 3: informa que o saque não é possível.
+Conceitos: variáveis, vetor, repetição, condicionais e operações aritméticas.
+
+2. SISTEMA DE VENDAS
+
+Pasta: exercicio2 · Arquivo: SistemaVendas.java
+
+Recebe a quantidade de vendas e o valor de cada uma. Apresenta total, maior venda, menor
+venda, média, quantidade de vendas acima de R$ 500 e comissão.
+
+Como funciona
+
+O programa soma os valores durante a repetição. A primeira venda serve como referência
+para encontrar a maior e a menor. O contador aumenta somente quando uma venda ultrapassa
+R$ 500.
+
+Comissão sobre o total vendido
+
+- Até R$ 1.000: comissão: 3%
+- Acima de R$ 1.000 até R$ 5.000: comissão: 5%
+- Acima de R$ 5.000: comissão: 8%
+
+Exemplo
+
+Vendas de R$ 100, 600, 500, 1.000 e 300 resultam em:
+
+- Total: R$ 2.500 · Média: R$ 500.
+- Maior: R$ 1.000 · Menor: R$ 100.
+- Acima de R$ 500: 2 vendas.
+- Comissão: R$ 125.
+Conceitos: entrada de dados, repetição, acumulador, contador e condicionais.
+
+3. SISTEMA DE FUNCIONÁRIOS
+
+Pasta: exercicio3 · Arquivos: Funcionario.java e Principal.java
+
+A classe Funcionario guarda nome, cargo e salário em atributos privados. O construtor
+recebe os dados iniciais de cada funcionário.
+
+Métodos
+
+- aumentarSalario(): recebe um percentual e atualiza o salário.
+- calcularSalarioAnual(): retorna o salário mensal multiplicado por 12.
+- exibirDados(): mostra as informações do funcionário.
+Resultados dos cinco funcionários
+
+- Ana: aumento: 10%; salário final: R$ 3.300
+- Bruno: aumento: 5%; salário final: R$ 2.100
+- Carla: aumento: 15%; salário final: R$ 4.600
+- Diego: aumento: 8%; salário final: R$ 2.700
+- Elisa: aumento: 12%; salário final: R$ 5.600
+
+Conceitos: classes, objetos, construtor, encapsulamento e métodos.
+
+4. FUNCIONÁRIOS COM HERANÇA
+
+Pasta: exercicio4 · Arquivos: Funcionario.java, Gerente.java, Vendedor.java e
+Principal.java
+
+Funcionario guarda nome e salário-base. Gerente e Vendedor herdam dessa classe e possuem
+suas próprias regras de cálculo.
+
+Cálculo do salário
+
+- Funcionário: recebe o salário-base.
+- Gerente: recebe o salário-base mais 20%.
+- Vendedor: recebe o salário-base mais 10% do total de suas vendas.
+O programa guarda os três tipos em um vetor de Funcionario e chama calcularSalario()
+para todos. Cada objeto executa a versão correspondente ao seu tipo.
+
+Resultados
+
+- Ana: tipo: Funcionário; salário final: R$ 2.500
+- Bruno: tipo: Gerente; salário final: R$ 6.000
+- Carla: tipo: Vendedor; salário final: R$ 3.200
+
+Conceitos: herança, construtores, encapsulamento, sobrescrita e polimorfismo.
+
+5. SISTEMA DE CONTAS BANCÁRIAS
+
+Pasta: exercicio5 · Arquivos: Conta.java, ContaCorrente.java, ContaPoupanca.java e
+Principal.java
+
+Conta guarda número, titular e saldo em atributos privados. ContaCorrente e
+ContaPoupanca herdam dessa classe.
+
+Operações
+
+- depositar(): soma um valor ao saldo.
+- sacar(): subtrai um valor do saldo.
+- calcularSaldo(): na conta corrente, desconta a taxa no resultado; na poupança,
+  acrescenta o rendimento percentual.
+O cálculo retorna o resultado sem modificar o saldo armazenado. Depósitos e saques
+alteram esse saldo.
+
+Resultados após as operações
+
+- Corrente 1: saldo calculado: R$ 1.280
+- Corrente 2: saldo calculado: R$ 2.070
+- Poupança 1: saldo calculado: R$ 1.224
+- Poupança 2: saldo calculado: R$ 3.030
+
+Conceitos: classes, objetos, encapsulamento, herança e sobrescrita de métodos.
+
+COMO EXECUTAR NO COMPUTADOR
+
+É necessário ter um JDK instalado, com os comandos java e javac disponíveis.
+
+1. Abra a pasta do exercício
+
+No terminal, entre na pasta do exercício que deseja testar. Exemplo, partindo da pasta
+que contém Atividade_Java_N1:
+
+    cd .\Atividade_Java_N1\exercicio1
+
+2. Compile os arquivos
+
+Dentro da pasta escolhida, execute:
+
+    javac -encoding UTF-8 *.java
+
+3. Execute o programa
+
+Use o comando correspondente ao exercício:
+
+- exercicio1: comando: java CaixaEletronico
+- exercicio2: comando: java SistemaVendas
+- exercicio3: comando: java Principal
+- exercicio4: comando: java Principal
+- exercicio5: comando: java Principal
+
+4. Informe os dados, quando solicitado
+
+- Exercício 1: digite um valor inteiro de saque, como 387.
+- Exercício 2: digite a quantidade de vendas e depois cada valor. Use vírgula nos
+  centavos, como 125,50, sem separador de milhar.
+- Exercícios 3, 4 e 5: os resultados aparecem automaticamente.
+Compile cada exercício dentro da sua própria pasta, pois alguns usam os mesmos nomes de
+classes.
